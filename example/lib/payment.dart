@@ -64,6 +64,7 @@ class _PaymentPageState extends State<PaymentPage> {
           merchantKey: prefs.getString('merchantKey') ?? '',
           merchantToken: prefs.getString('merchantToken') ?? '',
           webhookUrl: prefs.getString('notificationUrl') ?? '',
+          packageName: prefs.getString('packageName'),
           environment: IPGEnvironment.dev);
 
       _payableIPG = PAYableIPG(
@@ -92,11 +93,11 @@ class _PaymentPageState extends State<PaymentPage> {
           shippingContactMobilePhone: form.shippingMobile,
           shippingContactPhone: form.shippingPhone,
           shippingContactEmail: form.shippingEmail,
-          shippingCompanyName: form.billingCompanyName,
+          shippingCompanyName: form.shippingCompanyName,
           shippingAddressStreet: form.shippingStreetAddress1,
           shippingAddressStreet2: form.shippingStreetAddress2,
           shippingAddressCity: form.shippingTownCity,
-          shippingAddressStateProvince: form.shippingTownCity,
+          shippingAddressStateProvince: form.shippingProvince,
           shippingAddressCountry: form.shippingCountry,
           shippingAddressPostcodeZip: form.shippingPostcode,
           startDate: form.startDate,

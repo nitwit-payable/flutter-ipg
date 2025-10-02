@@ -19,6 +19,8 @@ class PAYableIPGClient {
   final String? webhookUrl;
   /// Default is [IPGEnvironment.production].
   final IPGEnvironment? environment;
+  /// Optional package name override. If not provided, will be auto-detected from platform.
+  final String? packageName;
 
   /// Sets the params applicable for all payments.
   const PAYableIPGClient({
@@ -28,6 +30,7 @@ class PAYableIPGClient {
     required this.merchantToken,
     this.webhookUrl,
     this.environment,
+    this.packageName,
   });
 
   /// Provides the status of a specific payment by using [uid] and
